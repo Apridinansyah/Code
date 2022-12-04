@@ -1,0 +1,2218 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Facebook.NET.SDK</name>
+    </assembly>
+    <members>
+        <member name="T:Facebook.NET.SDK.Domain.AdAccount.AdAccountCreate">
+            <summary>
+            Create new ad account for selected business
+            Use "NONE" for all undefined poperties
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAccount.AdAccountCreateResponse">
+            <summary>
+            Response from facebook after creating AdAccount
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAccount.AdAccountStatus">
+            <summary>
+            Ad account status decrypt
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAccount.AdAccountDisableReason">
+            <summary>
+            Ad account disable reason decrypt
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAccount.CustomAudience">
+            <summary>
+            Facebook custom audience
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAudience.AdAccountMap">
+            <summary>
+            Ad account avaliable 
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAudience.AdAccountMap.Owner">
+            <summary>
+            Owner id
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.AdAudience.CustomAudienceDataSourceType.IG_BUSINESS_EVENTS">
+            <summary>
+            not for api
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.AdAudience.CustomAudienceDataSourceType.FB_EVENT_SIGNALS">
+            <summary>
+            not for api
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.AdAudience.CustomAudienceDataSourceType.MULTI_DATA_EVENTS">
+            <summary>
+            not for api
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAudience.LookalikeAudienceCreateModel">
+            <summary>
+            to get lookalike audience - use get custom audience and filter subtype = LOOKALIKE
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAudience.LookalikeAudienceCreateModel.OriginAudienceId">
+            <summary>
+            for custom audiences
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAudience.LookalikeAudienceCreateModel.Subtype">
+            <summary>
+            sets only to LOOKALIKE
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAudience.LookalikeAudienceSpecModel.Type">
+            <summary>
+            use only with Location spec
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAudience.LookalikeAudienceSpecModel.ConversionType">
+            <summary>
+            Use only with facebook pages and campaigns / adsets
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAudience.LookalikeAudienceSpecModel.OriginIds">
+            <summary>
+            Only for campaigns ids and adset 
+            use if when type == ConversionType.compaign_conversions
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAudience.LookalikeAudienceSpecModel.PageId">
+            <summary>
+            Only for page likes type
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Facebook.NET.SDK.Domain.AdAdset.AdAdsetModel.BidStrategy" -->
+        <member name="P:Facebook.NET.SDK.Domain.AdAdset.AdAdsetModel.IsAutobid">
+            <summary>
+            Only for 2.12 and lower. <see cref="!:https://developers.facebook.com/docs/marketing-api/validation/v2.12">documentation</see>
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/bidding-and-optimization#auto">more information</see>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAdset.AdAdsetModel.AttributionSpec">
+            <summary>
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/validation/v3.0#attribution_spec"/>
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Facebook.NET.SDK.Domain.AdAdset.AdTargetingModel.DynamicAudienceIds" -->
+        <!-- Badly formed XML comment ignored for member "T:Facebook.NET.SDK.Domain.AdAdset.DeliveryEstimateModel" -->
+        <member name="T:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel">
+            <summary>
+            Facebook documentation for dynamic: https://developers.facebook.com/docs/marketing-api/dynamic-product-ads/ads-management
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.AccountId">
+            <summary>
+            Account id
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.CreativeId">
+            <summary>
+            Id of Ad Creative object
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.ObjectId">
+            <summary>
+            The ID of the promoted_object or object that is relevant to the ad and ad type
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.ObjectStorySpec">
+            <summary>
+            The page id and the content to create a new unpublished page post specified using one of 
+            <code>link_data, photo_data, video_data, text_data or template_data</code>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.ObjectStoryId">
+            <summary>
+            The ID of a page post to use in an ad. 
+            This ID can be retrieved by using the graph API to query the posts of the page. 
+            If an image is used in the post, it will be downloaded and available in your account's image library.
+            If you create an unpublished page post inline via object_story_spec at the same time as creating the ad, this ID will be null. 
+            However the effective_object_story_id will be the ID of the page post regardless of whether it's an organic or unpublished page post
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.ProductSetId">
+            <summary>
+            The ID of the product set for this creative. See dynamic product ads for more detail.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.EffectiveInstagramStoryId">
+            <summary>
+            The ID of an Instagram post to use in an ad
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.InstagramActorId">
+            <summary>
+            Instagram actor ID
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.InstagramPermalinkUrl">
+            <summary>
+            Instagram permalink
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.InstagramStoryId">
+            <summary>
+            The ID of an Instagram post for creating ads. 
+            This field will be deprecated in the future. Use SOURCE_INSTAGRAM_STORY_ID
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.EffectiveObjectStoryId">
+            <summary>
+            The ID of a page post to use in an ad, regardless of whether it's an organic or unpublished page post
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.BrandedContentSponsorPage">
+            <summary>
+            ?
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.ImageHash">
+            <summary>
+            Image hash for an image you can use in creatives. 
+            If provided do not provide image_url. See image library for more details
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.ImageUrl">
+            <summary>
+            A URL for the image for this creative. 
+            We save the image at this URL to the ad account's image library. 
+            If provided do not include image_hash
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.LinkOgId">
+            <summary>
+            The Open Graph (OG) ID for the link in this creative if the landing page has OG tags
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.LinkUrl">
+            <summary>
+            Used to identify a specific landing tab on the Page 
+            (e.g. a Page tab app) by the Page tab's URL. See connection objects for retrieving Page tabs' URLs. 
+            The likes tab is not supported.
+            app_data parameters may be added to the url to pass data to a tab app
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.MessengerSponsoredMessage">
+            <summary>
+            The JSON string of messenger sponsored message for this creative. 
+            See (docs/messenger-platform/reference/send-api) for more detailmary
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.ObjectType">
+            <summary>
+            The type of object that is being advertised.
+            Null is OK.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.ObjectUrl">
+            <summary>
+            Destination URL for a link not connected to a page.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.PlatformCustomizations">
+            <summary>
+            Use this field to customize the media for different Facebook placements. 
+            Currently you can use this field for customizing images and videos. 
+            The media specified here replaces the original media defined in the ad creative when the ad displays on those placements. 
+            For example, if you define a media here for the instagram key, 
+            Facebook uses that media instead of the media defined in the ad creative when showing the ad on Instagram.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.Status">
+            <summary>
+            The status of this creative.
+            <code>{ACTIVE, DELETED}</code>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.TemplateUrl">
+            <summary>
+            The Tracking URL for dynamic product ads. See dynamic product ads for more detail.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.TemplateUrlSpec">
+            <summary>
+            Use this field to create url templates for dynamic product ads. 
+            See dynamic product ads for more detail.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.ThumbnailUrl">
+            <summary>
+            The URL to a thumbnail for this creative. 
+            You can optionally request dimensions of this thumbnail by providing the thumbnail_width and thumbnail_height parameters. 
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.Title">
+            <summary>
+            Title for a link ad (not connected to a Page)
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.UrlTags">
+            <summary>
+            A set of query string parameters which will replace or be appended to urls clicked from page post ads, 
+            message of the post, and canvas app install creatives only
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.UsePageActorOverride">
+            <summary>
+            If this is true, we will show the page actor for mobile app ads
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.VideoId">
+            <summary>
+            The ID of the video in this creative
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeModel.Body">
+            <summary>
+            The body of the ad. Not supported for video post creatives
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAd.AdCreativeTemplateModel">
+            <summary>
+            Use "Some text {product.propery}" templates. 
+            
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAd.AdCreativeTemplateImageOverlaySpecModel">
+            <summary>
+            facebook docs:
+            https://developers.facebook.com/docs/marketing-api/reference/ad-creative-link-data-image-overlay-spec/
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.AdAd.AdCreativeObjectType.STORE_ITEM">
+            <summary>
+            Refers to an iTunes or Google Play store destination
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.AdAd.AdCreativeObjectType.SHARE">
+            <summary>
+            From a page
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.AdAd.AdCreativeObjectType.STATUS">
+            <summary>
+            Of a page
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.AdAd.AdCreativeObjectType.APPLICATION">
+            <summary>
+            App on facebook
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.AdAd.AdCreativeObjectType.INVALID">
+            <summary>
+             when an invalid object_id was specified such as a deleted object or if you do not have permission to see the object.
+             In very few cases, this field may be empty if Facebook is unable to identify the type of advertised object
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAd.AdCreativePlatformCustomizationsModel">
+            <summary>
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/reference/ad-creative-platform-customization/"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativePlatformCustomizationsModel.Instagram">
+            <summary>
+            Media used for instagram
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAd.AdCreativePlatformCustomizationsOverride">
+            <summary>
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/reference/ad-creative-platform-customization-override/"/>
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAd.AdCreativeUrlSpecModel">
+            <summary>
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/reference/ad-creative-template-url-spec/"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeUrlSpecModel.Android">
+            <summary>
+            AppLink templates for Android.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeUrlSpecModel.Config">
+            <summary>
+            Recommended configuration for app-link templates.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeUrlSpecModel.Ios">
+            <summary>
+            AppLink templates for iOS.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeUrlSpecModel.Ipad">
+            <summary>
+            AppLink templates for iPad.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeUrlSpecModel.Iphone">
+            <summary>
+            AppLink templates for iPhone.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeUrlSpecModel.Web">
+            <summary>
+            AppLink templates for Web.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeUrlSpecModel.WindowsPhone">
+            <summary>
+            AppLink templates for Windows Phone.
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAd.AdCreativeAndroidData">
+            <summary>
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/reference/ad-creative-android-data/"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeAndroidData.AppName">
+            <summary>
+            The name of the Android app, e.g. Electronic Example Android.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeAndroidData.Package">
+            <summary>
+            A fully qualified package name for intent generation and store linking, e.g. com.electronic
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeAndroidData.Url">
+            <summary>
+            A custom URL scheme for the Android App, e.g. example-android://electronic/id={{product.retailor_id | urlencode}}
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAd.AdCreativeConfigData">
+            <summary>
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/reference/ad-creative-config-data/"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeConfigData.AppId">
+            <summary>
+            The id of the Facebook App where the deep-link information is stored.
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAd.AdCreativeIosData">
+            <summary>
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/reference/ad-creative-ios-data/"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeIosData.AppName">
+            <summary>
+            The name of the iOS app, suitable for display, e.g. Electronic Example iOS.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeIosData.AppStoreId">
+            <summary>
+            The app ID for the App Store, e.g. 1234.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeIosData.Url">
+            <summary>
+            A custom scheme for the iOS app, e.g. example-ios://electronic/id={{product.retailor_id | urlencode}}.
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAd.AdCreativeIpadData">
+            <summary>
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/reference/ad-creative-ipad-data/"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeIpadData.AppName">
+            <summary>
+            The name of the iOS app, suitable for display, e.g. Electronic Example iOS.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeIpadData.AppStoreId">
+            <summary>
+            The app ID for the App Store, e.g. 1234.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeIpadData.Url">
+            <summary>
+            A custom scheme for the iOS app, e.g. example-ios://electronic/id={{product.retailor_id | urlencode}}.
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAd.AdCreativeIphoneData">
+            <summary>
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/reference/ad-creative-iphone-data/"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeIphoneData.AppName">
+            <summary>
+            The name of the iOS app, suitable for display, e.g. Electronic Example iOS.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeIphoneData.AppStoreId">
+            <summary>
+            The app ID for the App Store, e.g. 1234.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeIphoneData.Url">
+            <summary>
+            A custom scheme for the iOS app, e.g. example-ios://electronic/id={{product.retailor_id | urlencode}}.
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAd.AdCreativeWebData">
+            <summary>
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/reference/ad-creative-web-data/"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeWebData.ShouldFallback">
+            <summary>
+            ndicates if the web url should be used as a fallback, defaults to true. 
+            If it is set to false, the content is meant to be viewed only on a native app.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeWebData.Url">
+            <summary>
+            The web url, e.g. http://www.expedia.com/?search={{hotel.name | urlencode}}
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAd.AdCreativeWindowsPhoneData">
+            <summary>
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/reference/ad-creative-windows-phone-data/"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeWindowsPhoneData.AppId">
+            <summary>
+            The app ID, as a GUID, for app store, e.g. ee728e01-7727-4168-9c8f-85c7eef40112.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeWindowsPhoneData.AppName">
+            <summary>
+            The name of the app, suitable for display, e.g. Electronic Example Windows.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdCreativeWindowsPhoneData.Url">
+            <summary>
+            A custom scheme for the Windows Phone App, e.g. example-windows://electronic/id={{product.retailor_id | urlencode}}.
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.AdAd.AdExecutionOptions.validate_only">
+            <summary>
+            When this option is specified, the API call will not perform the mutation but will run 
+            through the validation rules against values of each field.
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.AdAd.AdExecutionOptions.include_recommendations">
+            <summary>
+            this option should not be used by itself. 
+            It should always be specified with validate_only. When these options are specified,
+            the API call will perform Ads Integrity validations,
+            which include message language checking, image 20% text rule, and so on, as well as the validation logics.
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.AdAd.AdExecutionOptions.synchronous_ad_review">
+            <summary>
+            When these options are specified, the API call will perform Ads Integrity validations,
+            which include message language checking, image 20% text rule, and so on, as well as the validation logics.
+            If the call passes validation or review, response will be <code>{"success": true}</code>. 
+            If the call does not pass, an error will be returned with more details.These options can be used to improve 
+            any UI to display errors to the user much sooner, e.g. as soon as a new value is typed into any field corresponding to this ad object,
+            rather than at the upload/save stage, or after review.
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdAd.AdModel">
+            <summary>
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/reference/adgroup#Creating"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdModel.Creative">
+            <summary>
+            This field is required for create. 
+            The ID or creative spec of the ad creative to be used by this ad. 
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdModel.BidAmount">
+            <summary>
+            Bid amount for this ad which will be used in auction instead of the ad set bid_amount, if specified.
+            Any updates to the ad set bid_amount will overwrite this value with the new ad set value.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdModel.ExecutionOptions">
+            <summary>
+            Default null.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdAd.AdModel.Status">
+            <summary>
+            Only ACTIVE and PAUSED are valid during creation. 
+            Other statuses can be used for update. When an ad is created, it will first go through ad review, 
+            and will have the ad status PENDING_REVIEW before it finishes review and reverts back to your selected status of ACTIVE or PAUSED. 
+            During testing, it is recommended to set ads to a PAUSED status so as to not incur accidental spend.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdCampaign.AdCampaignCopyModel.DeepCopy">
+            <summary>
+            Default: false
+            Whether to copy all the child ads. 
+            Limits: the total number of children ads to copy should not exceed 3 for a synchronous call and 51 for an asynchronous call.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdCampaign.AdCampaignCopyModel.RenameOptions">
+            <summary>
+            Rename options
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdCampaign.AdCampaignCopyModel.EndTime">
+            <summary>
+            For deep copy, the end time of the sets under the copied campaign, e.g. 2015-03-12 23:59:59-07:00 or 2015-03-12 23:59:59 PDT. UTC UNIX timestamp.
+            When creating a set with a daily budget, specify end_time=0 to set the set to be ongoing without end date. If not set, the copied sets will inherit the end time from the original set
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdCampaign.AdCampaignCopyModel.StartTime">
+            <summary>
+            For deep copy, the start time of the sets under the copied campaign, e.g. 2015-03-12 23:59:59-07:00 or 2015-03-12 23:59:59 PDT. UTC UNIX timestamp.
+            If not set, the copied sets will inherit the start time from the original set
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdCampaign.AdCampaignCopyModel.StatusOption">
+            <summary>
+            Default value: PAUSED
+            ACTIVE: the copied campaign will have active status.
+            PAUSED: the copied campaign will have paused status.
+            INHERITED_FROM_SOURCE: the copied campaign will have the parent status.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.AdCampaign.EntityRenameOptions.RenameSuffix">
+            <summary>
+            A suffix to copy names. Defaults to null if not provided and appends a localized string of - Copy based on the ad account locale.
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.AdCampaign.EntityRenameOptionsStrategy">
+            <summary>
+            Default value: ONLY_TOP_LEVEL_RENAME
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.AdCampaign.EntityRenameOptionsStrategy.DEEP_RENAME">
+            <summary>
+            will change this object's name and children's names in the copied object.
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.AdCampaign.EntityRenameOptionsStrategy.ONLY_TOP_LEVEL_RENAME">
+            <summary>
+            will change the this object's name but won't change the children's name in the copied object.
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.AdCampaign.EntityRenameOptionsStrategy.NO_RENAME">
+            <summary>
+            will change no name in the copied object
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessDisplayModel.Vertical">
+            <summary>
+            Type of business account
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessDisplayModel.PrimaryPage">
+            <summary>
+            Business primary page
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessDisplayModel.OwnedAdAccounts">
+            <summary>
+            ad accounts owned by this business
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessDisplayModel.OwnedPixels">
+            <summary>
+            Piuxels owned by this business
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessDisplayModel.Adspixels">
+            <summary>
+            All shared and owned pixels
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessDisplayModel.OwnedPages">
+            <summary>
+            Pages, owned by business account
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessDisplayModel.ClientPages">
+            <summary>
+            Pages, owned by business account
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessDisplayModel.ProfilePictureUri">
+            <summary>
+            Business profile picture url
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessDisplayModel.PermittedRoles">
+            <summary>
+            User roles
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessDisplayModel.CreatedBy">
+            <summary>
+            Who created this business
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessDisplayModel.TimezoneId">
+            <summary>
+            Timezone
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Business.BusinessMap">
+            <summary>
+            Fields for business node
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessMap.Vertical">
+            <summary>
+            Vertical
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Business.BusinessVertical">
+            <summary>
+            Type of business account
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/business-manager-api/"/>
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Business.BusinessManagingRole">
+            <summary>
+            Role of business user
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.Business.BusinessManagingRole.ADMIN">
+            <summary>
+            Can control all aspects
+            </summary>
+        </member>
+        <member name="F:Facebook.NET.SDK.Domain.Business.BusinessManagingRole.EMPLOYEE">
+            <summary>
+            Can only see information. Read access
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Business.BusinessModel">
+            <summary>
+            General business model
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessModel.PrimaryPage">
+            <summary>
+            Facebook page id
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessModel.Vertical">
+            <summary>
+            Type of business account
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Business.BusinessModel.TimezoneId">
+            <summary>
+            <see cref="!:https://developers.facebook.com/docs/marketing-api/reference/ad-account/timezone-ids/v3.0"/>
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Insights.Breakdowns">
+            <summary>
+            How to break down the result. 
+            For more than one breakdown, only certain combinations are available: See "Combining Breakdowns" in the Breakdowns page.
+            The option impression_device cannot be used by itself
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Insights.InsightsActionDevice">
+            <summary>
+            The device on which the conversion event you're tracking occurred. For example, "Desktop" if someone converted on a desktop computer.
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Insights.InsightsAdgroupRelevanceScoreStatus">
+            <summary>
+            <see cref="T:Facebook.NET.SDK.Domain.Insights.InsightsAdgroupRelevanceScore"/>
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Insights.InsightsAdgroupRelevanceScoreFeedback">
+            <summary>
+            <see cref="T:Facebook.NET.SDK.Domain.Insights.InsightsAdgroupRelevanceScore"/>
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Insights.InsightsAdMap">
+            <summary>
+            <seealso cref="!:https://developers.facebook.com/docs/marketing-api/reference/adgroup/insights/#Overview"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.AccountCurrency">
+            <summary>
+            Currency that is used by your ad account.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.AccountId">
+            <summary>
+            The ID number of your ad account, which groups your advertising activity. Your ad account includes your campaigns, ads and billing.
+            [default]
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.AccountName">
+            <summary>
+            The name of your ad account, which groups your advertising activity. Your ad account includes your campaigns, ads and billing.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.ActionValues">
+            <summary>
+            The total value of all conversions attributed to your ads.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.Actions">
+            <summary>
+            The total number of actions people took that are attributed to your ads. Actions may include engagement, clicks or conversions.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.AdId">
+            <summary>
+            The unique ID of the ad you're viewing in reporting.
+            [default]
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.AdName">
+            <summary>
+            The name of the ad you're viewing in reporting.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.AdsetId">
+            <summary>
+            The unique ID of the ad set you're viewing in reporting. An ad set is a group of ads that share the same budget, schedule, delivery optimization and targeting.
+            [default]
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.AdsetName">
+            <summary>
+            The name of the ad set you're viewing in reporting. An ad set is a group of ads that share the same budget, schedule, delivery optimization and targeting.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.AppStoreClicks">
+            <summary>
+            useless wright now
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.BuyingType">
+            <summary>
+            The method by which you pay for and target ads in your campaigns: through dynamic auction bidding, fixed-price bidding, or reach and frequency buying. This field is currently only visible at the campaign level.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CallToActionClicks">
+            <summary>
+            The number of times people clicked the call-to-action button on your ad.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CampaignId">
+            <summary>
+            The unique ID number of the ad campaign you're viewing in reporting. Your campaign contains ad sets and ads.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CampaignName">
+            <summary>
+            The name of the ad campaign you're viewing in reporting. Your campaign contains ad sets and ads.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CanvasAvgViewPersent">
+            <summary>
+            The average percentage of the Facebook Canvas that people saw. 
+            Canvas is a screen that opens on mobile after a person clicks the Canvas link in your ad. It may include a series of interactive or multimedia components, 
+            including video, images, product catalogs and more.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CanvasAvgViewTime">
+            <summary>
+            The average total time, in seconds, that people spent viewing a Facebook Canvas. Canvas is a screen that opens on mobile after a person clicks the Canvas link in your ad.
+            It may include a series of interactive or multimedia components, including video, images, product catalogs and more.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.Clicks">
+            <summary>
+            The number of clicks on your ads.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CostPer10SecVideoView">
+            <summary>
+            The average cost for each 10-second video view.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CostPerActionType">
+            <summary>
+            The average cost of a relevant action.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CostPerEstimatedAdRecallers">
+            <summary>
+            The average cost for each estimated ad recall lift. 
+            This metric is only available for assets in the Brand awareness, Post engagement and Video views Objectives. This metric is estimated and in development.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CostPerInlineLinkClick">
+            <summary>
+            The average cost of each inline link click.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CostPerInlinePostEngagement">
+            <summary>
+            The average cost of each inline post engagement.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CostPerTotalAction">
+            <summary>
+            The average cost for each outbound click.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CostPerUniqueActionType">
+            <summary>
+            The average cost of a relevant action.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CostPerUniqueClick">
+            <summary>
+            The average cost of each unique action. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CostPerUniqueInlineLinkClick">
+            <summary>
+            The average cost for each unique click (all). This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.CostPerUniqueOutboundClick">
+            <summary>
+            The average cost of each unique inline link click. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.Cpc">
+            <summary>
+            The average cost for each click (all).
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.Cpm">
+            <summary>
+            The average cost for 1,000 impressions.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.Cpp">
+            <summary>
+            The average cost to reach 1,000 people. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.Ctr">
+            <summary>
+            The percentage of times people saw your ad and performed a click (all).
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.DateStart">
+            <summary>
+            The start date for your data. This is controlled by the date range you've selected for your reporting view.
+            [default]
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.DateStop">
+            <summary>
+            The end date for your data. This is controlled by the date range you've selected for your reporting view.
+            [default]
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.EstimatedAdRecallRate">
+            <summary>
+            The rate at which an estimated number of additional people, when asked, would remember seeing your ads within 2 days. This metric is only available for assets in the Brand awareness,
+            Post engagement and Video views Objectives. This metric is estimated and in development.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.EstimatedAdRecallers">
+            <summary>
+            An estimate of the number of additional people who may remember seeing your ads, if asked, within 2 days. 
+            This metric is only available for assets in the Brand awareness, Post engagement and Video views Objectives. This metric is estimated and in development.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.Frequency">
+            <summary>
+            The average number of times each person saw your ad. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.Impressions">
+            <summary>
+            The number of times your ads were on screen.
+            [default]
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.InlineLinkClickCtr">
+            <summary>
+            The percentage of time people saw your ads and performed an inline link click.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.InlineLinkClicks">
+            <summary>
+            The number of clicks on links to select destinations or experiences, on or off Facebook-owned properties. Inline link clicks use a fixed 1-day-click attribution window.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.InlinePostEngagement">
+            <summary>
+            The total number of actions that people take involving your ads. Inline post engagements use a fixed 1-day-click attribution window.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.MobileAppPurchaseRoas">
+            <summary>
+            The total return on ad spend (ROAS) from mobile app purchases. This is based on the value that you assigned when you set up the app event.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.Objective">
+            <summary>
+            The objective you selected for your campaign. Your objective reflects the goal you want to achieve with your advertising.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.OutboundClicks">
+            <summary>
+            The number of clicks on links that take people off Facebook-owned properties.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.OutboundClicksCtr">
+            <summary>
+            The percentage of times people saw your ad and performed an outbound click.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.Reach">
+            <summary>
+            The number of people who saw your ads at least once. Reach is different from impressions, which may include multiple views of your ads by the same people. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.RelevanceScore">
+            <summary>
+            A rating from 1 to 10 that estimates how well your target audience is responding to your ad. This score is shown after your ad receives more than 500 impressions. 
+            It's only visible when looking at reporting for ads and does not appear for ad sets and campaigns. This field is currently only visible at the ad level.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.SocialClicks">
+            <summary>
+            The number of clicks (all) when your ad was displayed with social information, which shows other Facebook friends who engaged with your Facebook Page or ad.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.SocialImpressions">
+            <summary>
+            The number of times your ads were viewed when displayed with social information, which shows Facebook friends who engaged with your Facebook Page or ad.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.SocialReach">
+            <summary>
+            The number of people who saw your ad when displayed with social information, 
+            which shows other Facebook friends who engaged with your Facebook Page or ad. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.SocialSpend">
+            <summary>
+            The total amount you've spent so far for your ads showed with social information. (ex: Jane Doe likes this).
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.Spend">
+            <summary>
+            The estimated total amount of money you've spent on your campaign, ad set or ad during its schedule. This metric is estimated.
+            [default]
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.TotalActionValue">
+            <summary>
+            The total value of all conversions attributed to your ads.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.TotalActions">
+            <summary>
+            The total number of actions people took that are attributed to your ads. Actions may include engagement, clicks or conversions.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.TotalUniqueActions">
+            <summary>
+            The number of people who took an action that was attributed to your ads. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.UniqueClicks">
+            <summary>
+            The number of people who performed a click (all). This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.UniqueCtr">
+            <summary>
+            The percentage of people who saw your ad and performed a unique click (all). This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.UniqueImpressions">
+            <summary>
+            deprecated?
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.UniqueInlineLinkClickCtr">
+            <summary>
+            The percentage of people who saw your ad and performed a link click. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.UniqueInlineLinkClicks">
+            <summary>
+            The number of people who performed an inline link click. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.UniqueLinkClicksCtr">
+            <summary>
+            The percentage of people who saw your ad and performed a link click. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.UniqueOutboundClicks">
+            <summary>
+            The number of people who performed an outbound click. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.UniqueOutboundClicksCtr">
+            <summary>
+            The percentage of people who saw your ad and performed an outbound click. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.UniqueSocialClicks">
+            <summary>
+            The number of people who performed a click (all) on your ad when it was displayed with social information,
+            which shows other Facebook friends who engaged with your Facebook Page or ad. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.UniqueSocialImpressions">
+            <summary>
+            deprecated?
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.Video10SecWatchedActions">
+            <summary>
+            The number of times your video was watched for an aggregate of at least 10 seconds, or for nearly its total length, whichever happened first.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.Video30SecWatchedActions">
+            <summary>
+            The number of times your video was watched for an aggregate of at least 30 seconds, or for nearly its total length, whichever happened first.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.VideoAvgPercentWatchedActions">
+            <summary>
+            The average percentage of your video that people played.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.VideoAvgTimeWatchedActions">
+            <summary>
+            The average time a video was watched.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.VideoCompleteWatchedActions">
+            <summary>
+            deprecated? 
+            Use VideoP100WatchedActions insted
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.VideoP100WatchedActions">
+            <summary>
+            The number of times your video was played at 100% of its length, including plays that skipped to this point.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.VideoP25WatchedActions">
+            <summary>
+            The number of times your video was played at 25% of its length, including plays that skipped to this point.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.VideoP50WatchedActions">
+            <summary>
+            The number of times your video was played at 50% of its length, including plays that skipped to this point.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.VideoP75WatchedActions">
+            <summary>
+            The number of times your video was played at 75% of its length, including plays that skipped to this point.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.VideoP95WatchedActions">
+            <summary>
+            The number of times your video was played at 95% of its length, including plays that skipped to this point.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.WebsiteCtr">
+            <summary>
+            The percentage of times people saw your ad and performed a link click.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdMap.WebsitePurchaseRoas">
+            <summary>
+            The total return on ad spend (ROAS) from website purchases. This is based on the value of all conversions recorded by the Facebook pixel on your website and attributed to your ads.
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Insights.InsightsModel">
+             <summary>
+             Statistics information
+             
+             <see href="https://developers.facebook.com/docs/marketing-api/reference/ad-campaign-group/insights#Reading">For campaigns</see>
+             <see href="https://developers.facebook.com/docs/marketing-api/reference/adgroup/insights/#Overview">For ads</see>
+             </summary>
+             <example>
+             <code>
+             var model = new InsightsModel
+            {
+                TimeRange = new TimeRangeModel
+                {
+                    Since = new DateTime(2018, 06, 09),
+                    Until = new DateTime(2018, 07, 8)
+                },
+            }.SetFields(x => new[] {
+                x.AccountCurrency,
+                x.AccountId,
+                x.AccountName,
+                x.BuyingType,
+                x.CampaignName,
+                x.Cpc,
+                x.Cpm,
+                x.Cpp,
+                x.Ctr,
+                x.DateStart,
+                x.DateStop,
+                x.Frequency,
+                x.Impressions,
+                x.Objective,
+                x.Reach,
+                x.SocialReach,
+                x.SocialImpressions,
+                x.Spend,
+                x.TotalActionValue,
+                x.TotalUniqueActions,
+                x.WebsitePurchaseRoas
+            });
+            </code>
+            </example>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel">
+            <summary>
+            <see href="https://developers.facebook.com/docs/marketing-api/reference/adgroup/insights/#Overview"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.AccountCurrency">
+            <summary>
+            Currency that is used by your ad account.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.AccountId">
+            <summary>
+            The ID number of your ad account, which groups your advertising activity. Your ad account includes your campaigns, ads and billing.
+            [default]
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.AccountName">
+            <summary>
+            The name of your ad account, which groups your advertising activity. Your ad account includes your campaigns, ads and billing.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.ProductId">
+            <summary>
+            If breakdowns contains porduct_id will fill by target product id
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.ActionValues">
+            <summary>
+            The total value of all conversions attributed to your ads.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.Actions">
+            <summary>
+            The total number of actions people took that are attributed to your ads. Actions may include engagement, clicks or conversions.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.AdId">
+            <summary>
+            The unique ID of the ad you're viewing in reporting.
+            [default]
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.AdName">
+            <summary>
+            The name of the ad you're viewing in reporting.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.AdsetId">
+            <summary>
+            The unique ID of the ad set you're viewing in reporting. An ad set is a group of ads that share the same budget, schedule, delivery optimization and targeting.
+            [default]
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.AdsetName">
+            <summary>
+            The name of the ad set you're viewing in reporting. An ad set is a group of ads that share the same budget, schedule, delivery optimization and targeting.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.BuyingType">
+            <summary>
+            The method by which you pay for and target ads in your campaigns: through dynamic auction bidding, fixed-price bidding, or reach and frequency buying. This field is currently only visible at the campaign level.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CallToActionClicks">
+            <summary>
+            The number of times people clicked the call-to-action button on your ad.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CampaignId">
+            <summary>
+            The unique ID number of the ad campaign you're viewing in reporting. Your campaign contains ad sets and ads.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CampaignName">
+            <summary>
+            The name of the ad campaign you're viewing in reporting. Your campaign contains ad sets and ads.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CanvasAvgViewPrecent">
+            <summary>
+            The average percentage of the Facebook Canvas that people saw. 
+            Canvas is a screen that opens on mobile after a person clicks the Canvas link in your ad. It may include a series of interactive or multimedia components, 
+            including video, images, product catalogs and more.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CanvasAvgViewTime">
+            <summary>
+            The average total time, in seconds, that people spent viewing a Facebook Canvas. Canvas is a screen that opens on mobile after a person clicks the Canvas link in your ad.
+            It may include a series of interactive or multimedia components, including video, images, product catalogs and more.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.Clicks">
+            <summary>
+            The number of clicks on your ads.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.ComparisonNode">
+            <summary>
+            Parent node that encapsulates fields to be compared (current time range Vs comparison time range)
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CostPer10SecVideoView">
+            <summary>
+            The average cost for each 10-second video view.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CostPerActionType">
+            <summary>
+            The average cost of a relevant action.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CostPerEstimatedAdRecallers">
+            <summary>
+            The average cost for each estimated ad recall lift. 
+            This metric is only available for assets in the Brand awareness, Post engagement and Video views Objectives. This metric is estimated and in development.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CostPerInlineLinkClick">
+            <summary>
+            The average cost of each inline link click.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CostPerOutboundClick">
+            <summary>
+            The average cost of each inline post engagement.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CostPerTotalAction">
+            <summary>
+            The average cost for each outbound click.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CostPerUniqueActionType">
+            <summary>
+            The average cost of a relevant action.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CostPerUniqueClick">
+            <summary>
+            The average cost of each unique action. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CostPerUniqueInlineLinkClick">
+            <summary>
+            The average cost for each unique click (all). This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.CostPerUniqueOutboundClick">
+            <summary>
+            The average cost of each unique inline link click. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.Cpc">
+            <summary>
+            The average cost for each click (all).
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.Cpm">
+            <summary>
+            The average cost for 1,000 impressions.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.Cpp">
+            <summary>
+            The average cost to reach 1,000 people. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.Ctr">
+            <summary>
+            The percentage of times people saw your ad and performed a click (all).
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.DateStart">
+            <summary>
+            The start date for your data. This is controlled by the date range you've selected for your reporting view.
+            [default]
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.DateStop">
+            <summary>
+            The end date for your data. This is controlled by the date range you've selected for your reporting view.
+            [default]
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.EstimatedAdRecallRate">
+            <summary>
+            The rate at which an estimated number of additional people, when asked, would remember seeing your ads within 2 days. This metric is only available for assets in the Brand awareness,
+            Post engagement and Video views Objectives. This metric is estimated and in development.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.EstimatedAdRecallers">
+            <summary>
+            An estimate of the number of additional people who may remember seeing your ads, if asked, within 2 days. 
+            This metric is only available for assets in the Brand awareness, Post engagement and Video views Objectives. This metric is estimated and in development.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.Frequency">
+            <summary>
+            The average number of times each person saw your ad. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.Impressions">
+            <summary>
+            The number of times your ads were on screen.
+            [default]
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.InlineLinkClickCtr">
+            <summary>
+            The percentage of time people saw your ads and performed an inline link click.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.InlineLinkClicks">
+            <summary>
+            The number of clicks on links to select destinations or experiences, on or off Facebook-owned properties. Inline link clicks use a fixed 1-day-click attribution window.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.InlinePostEngagement">
+            <summary>
+            The total number of actions that people take involving your ads. Inline post engagements use a fixed 1-day-click attribution window.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.MobileAppPurchaseRoas">
+            <summary>
+            The total return on ad spend (ROAS) from mobile app purchases. This is based on the value that you assigned when you set up the app event.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.Objective">
+            <summary>
+            The objective you selected for your campaign. Your objective reflects the goal you want to achieve with your advertising.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.OutboundClicks">
+            <summary>
+            The number of clicks on links that take people off Facebook-owned properties.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.OutboundClicksCtr">
+            <summary>
+            The percentage of times people saw your ad and performed an outbound click.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.Reach">
+            <summary>
+            The number of people who saw your ads at least once. Reach is different from impressions, which may include multiple views of your ads by the same people. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.RelevanceScore">
+            <summary>
+            A rating from 1 to 10 that estimates how well your target audience is responding to your ad. This score is shown after your ad receives more than 500 impressions. 
+            It's only visible when looking at reporting for ads and does not appear for ad sets and campaigns. This field is currently only visible at the ad level.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.SocialClicks">
+            <summary>
+            The number of clicks (all) when your ad was displayed with social information, which shows other Facebook friends who engaged with your Facebook Page or ad.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.SocialImpressions">
+            <summary>
+            The number of times your ads were viewed when displayed with social information, which shows Facebook friends who engaged with your Facebook Page or ad.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.SocialReach">
+            <summary>
+            The number of people who saw your ad when displayed with social information, 
+            which shows other Facebook friends who engaged with your Facebook Page or ad. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.SocialSpend">
+            <summary>
+            The total amount you've spent so far for your ads showed with social information. (ex: Jane Doe likes this).
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.Spend">
+            <summary>
+            The estimated total amount of money you've spent on your campaign, ad set or ad during its schedule. This metric is estimated.
+            [default]
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.TotalActionValue">
+            <summary>
+            The total value of all conversions attributed to your ads.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.TotalActions">
+            <summary>
+            The total number of actions people took that are attributed to your ads. Actions may include engagement, clicks or conversions.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.TotalUniqueActions">
+            <summary>
+            The number of people who took an action that was attributed to your ads. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.UniqueActions">
+            <summary>
+            The number of people who took an action that was attributed to your ads. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.UniqueClicks">
+            <summary>
+            The number of people who performed a click (all). This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.UniqueCtr">
+            <summary>
+            The percentage of people who saw your ad and performed a unique click (all). This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.UniqueInlineLinkClickCtr">
+            <summary>
+            The percentage of times people saw your ad and performed a link click. Inline click-through rate uses a fixed 1-day-click attribution window. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.UniqueInlineLinkClicks">
+            <summary>
+            The number of people who performed an inline link click. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.UniqueLinkClicksCtr">
+            <summary>
+            The percentage of people who saw your ad and performed a link click. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.UniqueOutboundClicks">
+            <summary>
+            The number of people who performed an outbound click. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.UniqueOutboundClicksCtr">
+            <summary>
+            The percentage of people who saw your ad and performed an outbound click. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.UniqueSocialClicks">
+            <summary>
+            The number of people who performed a click (all) on your ad when it was displayed with social information,
+            which shows other Facebook friends who engaged with your Facebook Page or ad. This metric is estimated.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.Video10SecWatchedActions">
+            <summary>
+            The number of times your video was watched for an aggregate of at least 10 seconds, or for nearly its total length, whichever happened first.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.Video30SecWatchedActions">
+            <summary>
+            The number of times your video was watched for an aggregate of at least 30 seconds, or for nearly its total length, whichever happened first.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.VideoAvgPercentWatchedActions">
+            <summary>
+            The average percentage of your video that people played.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.VideoAvgTimeWatchedActions">
+            <summary>
+            The average time a video was watched.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.VideoP100WatchedActions">
+            <summary>
+            The number of times your video was played at 100% of its length, including plays that skipped to this point.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.VideoP25WatchedActions">
+            <summary>
+            The number of times your video was played at 25% of its length, including plays that skipped to this point.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.VideoP50WatchedActions">
+            <summary>
+            The number of times your video was played at 50% of its length, including plays that skipped to this point.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.VideoP75WatchedActions">
+            <summary>
+            The number of times your video was played at 75% of its length, including plays that skipped to this point.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.VideoP95WatchedActions">
+            <summary>
+            The number of times your video was played at 95% of its length, including plays that skipped to this point.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.WebsiteCtr">
+            <summary>
+            The percentage of times people saw your ad and performed a link click.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.WebsitePurchaseRoas">
+            <summary>
+            The total return on ad spend (ROAS) from website purchases. This is based on the value of all conversions recorded by the Facebook pixel on your website and attributed to your ads.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.WebsitePurchaseRoi">
+            <summary>
+            The total return on ad investment (ROI) from website purchases. This is based on the value of all conversions recorded by the Facebook pixel on your website and attributed to your ads.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel.GetWebsitePurchaseRoi" -->
+        <member name="T:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel">
+            <summary>
+            A single action for a Statistics result. Some fields that are marked default are returned only if you specify a breakdown for them.
+            <see href="https://developers.facebook.com/docs/marketing-api/reference/ads-action-stats/"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.D1Click">
+            <summary>
+            Metric value of attribution window "1 day after clicking the ad"
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.D1View">
+            <summary>
+            Metric value of attribution window "1 day after viewing the ad"
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.D28Click">
+            <summary>
+            Metric value of attribution window "28 days after clicking the ad"
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.D28View">
+            <summary>
+            Metric value of attribution window "28 days after viewing the ad"
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.D7Click">
+            <summary>
+            Metric value of attribution window "7 days after clicking the ad""
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.D7View">
+            <summary>
+            Metric value of attribution window "7 days after viewing the ad"
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.ActionCanvasComponentName">
+            <summary>
+            Name of a component within a Canvas ad
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.ActionCarouselCardId">
+            <summary>
+            The ID of the specific carousel card that people engaged with when they saw your ad.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.ActionCarouselCardName">
+            <summary>
+            The specific carousel card that people engaged with when they saw your ad. The cards are identified by their headlines.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.ActionDestination">
+            <summary>
+            The destination where people go after clicking on your ad. This could be your Facebook Page, 
+            an external URL for your conversion pixel or an app configured with the software development kit (SDK).
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.ActionDevice">
+            <summary>
+            The device on which the conversion event you're tracking occurred. For example, "Desktop" if someone converted on a desktop computer
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.ActionLinkClickDestination">
+            <summary>
+            The destination where people go after clicking link on your ad that directs people off Facebook.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.ActionReaction">
+            <summary>
+            The number of reactions on your ads or boosted posts. 
+            The reactions button on an ad allows people to share different reactions on its content: Like, Love, Haha, Wow, Sad or Angry.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.ActionTargetId">
+            <summary>
+            The id of destination where people go after clicking on your ad. 
+            This could be your Facebook Page, an external URL for your conversion pixel or an app configured with the software development kit (SDK).
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.ActionType">
+            <summary>
+            The kind of actions taken on your ad, Page, app or event after your ad was served to someone, even if they didn't click on it. Action types include Page likes,
+            app installs, conversions, event responses and more.
+            Actions prepended by app_custom_event come from mobile app events and actions prepended by offsite_conversion come from the Facebook Pixel.
+            <seealso cref="!:https://developers.facebook.com/docs/app-events"/>
+            <seealso cref="!:https://developers.facebook.com/docs/marketing-api/audiences-api/pixel"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.ActionVideoSound">
+            <summary>
+            The sound status (on/off) when someone plays your video ad.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.ActionVideoType">
+            <summary>
+            Video metrics breakdown.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.Inline">
+            <summary>
+            Metric value of attribution window that can occurs on the ad itself
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.AdsActionStatsModel.Value">
+            <summary>
+            Metric value of default attribution window
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Insights.InsightsAdgroupRelevanceScore">
+            <summary>
+            The relevance score, positive feedback level, negative feedback level, and organic rank of an ad
+            
+            <see href="https://developers.facebook.com/docs/marketing-api/reference/adgroup-relevance-score/"/>
+            <seealso href="Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel"/>
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdgroupRelevanceScore.NegativeFeedback">
+            <summary>
+            Negative feedback level (LOW, MEDIUM, HIGH)
+            *default
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdgroupRelevanceScore.PositiveFeedback">
+            <summary>
+            Positive feedback level (LOW, MEDIUM, HIGH)
+            *default
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdgroupRelevanceScore.Score">
+            <summary>
+            Score (1-10, 10 being the highest)
+            *default
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Insights.InsightsAdgroupRelevanceScore.Status">
+            <summary>
+            Status (OK, NOT_ENOUGH_IMPRESSIONS, UNKNOWN_ERROR)
+            *default
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Page.PageCreate">
+            <summary>
+            Create facebook page model
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PageCreate.Name">
+            <summary>
+            Name of new page
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PageCreate.ProfilePictureUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Page.PageModel">
+            <summary>
+            Facebook account (page) model
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Page.PagePictureModel">
+            <summary>
+            Facebook page picture model
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Page.PageTasks">
+            <summary>
+            Analog of permissions
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Page.PagePostModel">
+            <summary>
+            Model for facebook page feed
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostModel.ChildAttachments">
+            <summary>
+            Use to specify multiple links in the post. Minimum 2 and maximum of 5 objects. If you set
+            {multi_share_optimized}
+            to true, you can upload a maximum of 10 objects but Facebook will display the top 5
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostModel.AttachedMedia">
+            <summary>
+            Use field for adding existing photos
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostModel.FeedTargeting">
+            <summary>
+            Object that controls news feed targeting for this content. 
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostModel.Link">
+            <summary>
+            Link or message are required
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostModel.Message">
+            <summary>
+            Link or message are required
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostModel.MultiShareEndCard">
+            <summary>
+            If set to false, does not display the end card of a carousel link post when child_attachments is used. 
+            Default is true.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostModel.MultiShareOptimized">
+            <summary>
+            If set to true and only when the post is used in an ad, Facebook will automatically select the order of links in child_attachments.
+            Otherwise, the original ordering of child_attachments is preserved.
+            Default value is true.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostModel.ObjectAttachment">
+            <summary>
+            Facebook ID for an existing picture in the person's photo albums to use as the thumbnail image. 
+            They must be the owner of the photo, and the photo cannot be part of a message attachment.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostModel.Place">
+            <summary>
+            Page ID of a location associated with this post.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostModel.Published">
+            <summary>
+            Whether a story is shown about this newly published object.
+            Default is true which means the story is displayed in News Feed. 
+            This field is not supported when actions parameter is specified. 
+            Unpublished posts can be used in ads.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostModel.ScheduledPublishTime">
+            <summary>
+            Time when this post should go live, 
+            this can be any date between ten minutes and six months from the time of the API call.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostModel.Tags">
+            <summary>
+            Comma-separated list of user IDs of people tagged in this post. 
+            You cannot specify this field without also specifying a place.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostModel.Targeting">
+            <summary>
+            Object that limits the audience for this content. 
+            Anyone not in these demographics will not be able to view this content. 
+            This will not override any Page-level demographic restrictions that may be in place.
+            </summary>
+        </member>
+        <member name="M:Facebook.NET.SDK.Domain.Page.PagePostModel.SetTags(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Convert tags list to valid facebook tags
+            </summary>
+            <param name="tags"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Page.PagePostScheduleUpdateModel">
+            <summary>
+            Use this model to update post schedule
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostScheduleUpdateModel.Published">
+            <summary>
+            Whether a story is shown about this newly published object.
+            Default is true which means the story is displayed in News Feed. 
+            This field is not supported when actions parameter is specified. 
+            Unpublished posts can be used in ads.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostScheduleUpdateModel.ScheduledPublishTime">
+            <summary>
+            Time when this post should go live, 
+            this can be any date between ten minutes and six months from the time of the API call.
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Page.PagePostActionModel">
+            <summary>
+            Post feed -> Action
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Domain.Page.PagePostChildAttachment">
+            <summary>
+            Use to specify multiple links in the post. Minimum 2 and maximum of 5 objects. If you set
+            {multi_share_optimized}
+            to true, you can upload a maximum of 10 objects but Facebook will display the top 5
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostChildAttachment.Description">
+            <summary>
+            Used to show either a price, discount or website domain. 
+            If not specified, the content of the linked page will be extracted and used.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostChildAttachment.ImageHash">
+            <summary>
+            Hash of preview image
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostChildAttachment.Link">
+            <summary>
+            Url link
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostChildAttachment.Name">
+            <summary>
+            Title of link preview
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostChildAttachment.Picture">
+            <summary>
+            Preview image url
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostTargeting.AgeMin">
+            <summary>
+            Value can be 13, 17, 18, 19, or 21.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.Page.PagePostTargeting.GeoLocations">
+            <summary>
+            This object allows you to specify a number of different geographic locations. 
+            Please see our targeting guide for information on this object.
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Domain.ProductCatalogs.ProductCatalogModel.Products">
+            <summary>
+            Facebook catalog products
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1">
+            <summary>
+            Main class to cantch facebook return results.
+            </summary>
+            <typeparam name="T">Any class, new()</typeparam>
+        </member>
+        <member name="P:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1.StatusCode">
+            <summary>
+            Returned status code
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1.IsSuccessStatusCode">
+            <summary>
+            <see cref="P:System.Net.Http.HttpResponseMessage.IsSuccessStatusCode"/>
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1.IsSuccess" -->
+        <member name="P:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1.Request">
+            <summary>
+            Original request
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1.ResponseText">
+            <summary>
+            Raw response message
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1.Result">
+            <summary>
+            Result if any
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1.Error">
+            <summary>
+            Facebook error if any
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1.Exception">
+            <summary>
+            Inner lib exception if any
+            </summary>
+        </member>
+        <member name="P:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1.JsonSettings">
+            <summary>
+            Used json settings or <code>new JsonSerializerSettings</code>
+            </summary>
+        </member>
+        <member name="M:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1.op_Implicit(Facebook.NET.SDK.Infrastructure.Request.FacebookResponse{`0})~System.Boolean">
+            <summary>
+            Transform response to bool
+            </summary>
+            <param name="response">Self</param>
+        </member>
+        <member name="M:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1.Parse(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Decode facebook response message
+            </summary>
+            <param name="response"><see cref="T:System.Net.Http.HttpResponseMessage"/></param>
+            <returns><see cref="T:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1"/></returns>
+        </member>
+        <member name="T:Facebook.NET.SDK.Infrastructure.Request.QueryBuilder">
+            <summary>
+            Query builder
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Infrastructure.Request.QueryParam">
+            <summary>
+            Query parameter
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Infrastructure.Request.QueryParamFieldsBag">
+            <summary>
+            Query values bag
+            </summary>
+            <remarks>key={va1, val2}</remarks>
+        </member>
+        <member name="T:Facebook.NET.SDK.Infrastructure.Request.QueryParamField">
+            <summary>
+            Query field
+            </summary>
+            <remarks>Since / Until / Before / After / etc</remarks>
+        </member>
+        <member name="T:Facebook.NET.SDK.Infrastructure.Request.QueryParamOrder">
+            <summary>
+            Search order
+            </summary>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.AdAccountNode.Get(System.String,System.Func{Facebook.NET.SDK.Domain.AdAudience.AdAccountMap,System.Object[]})">
+            <summary>
+            Return ad account fields
+            </summary>
+            <param name="adAccountId">act_{x}</param>
+            <param name="map">Params from AdAccount map</param>
+            <returns></returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.AdAccountNode.Insights(System.String,Facebook.NET.SDK.Domain.Insights.InsightsModel)">
+            <summary>
+            Displays facebook insights for target account
+            </summary>
+            <param name="id">id of target account</param>
+            <param name="model">insights model</param>
+            <returns>
+            <see cref="T:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel"/>
+            </returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.AdAccount.AdCampaignNode.Insights(System.String,Facebook.NET.SDK.Domain.Insights.InsightsModel)">
+            <summary>
+            Displays facebook insights for target campaign
+            </summary>
+            <param name="id">id of target campaign</param>
+            <param name="model">insights model</param>
+            <returns>
+            <see cref="T:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel"/>
+            </returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.AdAccount.AdNode.Insights(System.String,Facebook.NET.SDK.Domain.Insights.InsightsModel)">
+            <summary>
+            <see href="https://developers.facebook.com/docs/marketing-api/reference/adgroup/insights/#Reading" />
+            </summary>
+            <param name="id">Id of target ad</param>
+            <param name="model">Insights request</param>
+            <returns><see cref="T:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel"/></returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.AdAccount.AdNode.GeneratePreview(Facebook.NET.SDK.Domain.AdAd.PreviewAdFormat,Facebook.NET.SDK.Domain.AdAd.AdCreativeModel)">
+            <summary>
+            Get ad preview
+            </summary>
+            <param name="format">Format of preview</param>
+            <param name="creative">Createive model for preview</param>
+            <returns></returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.AdAccount.AdsetNode.DeliveryEstimate(System.String,Facebook.NET.SDK.Domain.AdAdset.DeliveryEstimateModel)">
+            <summary>
+            Display potential reach based on targeting model
+            <see href="https://developers.facebook.com/docs/marketing-api/buying-api/targeting#delivery"/>
+            <seealso href="https://developers.facebook.com/docs/marketing-api/buying-api/targeting#location"/>
+            </summary>
+            <param name="adAccountId">Ad account id</param>
+            <param name="model">
+                Targeting model
+                <see cref="T:Facebook.NET.SDK.Domain.AdAdset.DeliveryEstimateModel"/>
+            </param>
+            <returns>Returns only one result in data model</returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.AdAccount.AdsetNode.DeliveryEstimate(System.String)">
+            <summary>
+            Display the information about adset
+            <see href="https://developers.facebook.com/docs/marketing-api/buying-api/targeting#delivery"/>
+            <seealso href="https://developers.facebook.com/docs/marketing-api/buying-api/targeting#location"/>
+            </summary>
+            <param name="adsetId">Id of target adset</param>
+            <returns>Returns only one result in data model</returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.AdAccount.AdsetNode.Insights(System.String,Facebook.NET.SDK.Domain.Insights.InsightsModel)">
+            <summary>
+            Displays facebook insights for target adset
+            </summary>
+            <param name="id">id of target adset</param>
+            <param name="model">insights model</param>
+            <returns>
+            <see cref="T:Facebook.NET.SDK.Domain.Insights.AdInsightsDisplayModel"/>
+            </returns>
+        </member>
+        <member name="T:Facebook.NET.SDK.Node.BusinessNode">
+            <summary>
+            Access to /business node
+            </summary>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.BusinessNode.#ctor(Facebook.NET.SDK.Client.FacebookClient)">
+            <summary>
+            Required constructor
+            </summary>
+            <param name="client"></param>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.BusinessNode.Create(System.String,Facebook.NET.SDK.Domain.Business.BusinessModel)">
+            <summary>
+            Create business account 
+            </summary>
+            <param name="userId">User id</param>
+            <param name="model">Business account create model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.BusinessNode.CreateAdAccount(System.String,Facebook.NET.SDK.Domain.AdAccount.AdAccountCreate)">
+            <summary>
+            Create ad account and assign it to business account
+            </summary>
+            <param name="businessId">Business account id</param>
+            <param name="model">AdAccount create model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.BusinessNode.CreatePixel(System.String,Facebook.NET.SDK.Domain.Pixel.PixelCreateModel)">
+            <summary>
+            Create pixel for business account
+            </summary>
+            <param name="businessId">Business account id</param>
+            <param name="model">Pixel create model</param>
+            <returns>Pixel id model</returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.BusinessNode.GetMy(System.Func{Facebook.NET.SDK.Domain.Business.BusinessMap,System.Object[]})">
+            <summary>
+            me/business access node
+            </summary>
+            <param name="map"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Facebook.NET.SDK.Node.Business.ProductCatalogsNode">
+            <summary>
+            Facebook product catalog
+            </summary>
+        </member>
+        <member name="T:Facebook.NET.SDK.Node.Me.PageNode">
+            <summary>
+            Selects information about user`s pages
+            </summary>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.Me.PageNode.#ctor(Facebook.NET.SDK.Client.FacebookClient)">
+            <summary>
+            
+            </summary>
+            <param name="client"></param>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.Me.PageNode.SetPageAccessToken(System.String)">
+            <summary>
+            Set facebook access token for publishing from page
+            </summary>
+            <param name="pageAccessToken">Page access token value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.Me.PageNode.GetMy">
+            <summary>
+            Get id and name of my pages
+            </summary>
+            <returns>Data model of pages with fill id and names</returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.Me.PageNode.CreatePost(System.String,Facebook.NET.SDK.Domain.Page.PagePostModel)">
+            <summary>
+            Create new post
+            </summary>
+            <param name="pageId">Target page id</param>
+            <param name="model">Page Post model</param>
+            <returns><see cref="T:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1"/></returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.Me.PageNode.UpdatePost(System.String,Facebook.NET.SDK.Domain.Page.PagePostModel)">
+            <summary>
+            Update existing post
+            <see cref="!:https://developers.facebook.com/docs/graph-api/reference/v3.2/post#updating"/>
+            </summary>
+            <param name="postId">Target post id</param>
+            <param name="model">Model with rows to update</param>
+            <returns><see cref="T:Facebook.NET.SDK.Infrastructure.Request.FacebookResponse`1"/></returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.Me.PageNode.UpdatePostSchedule(System.String,Facebook.NET.SDK.Domain.Page.PagePostScheduleUpdateModel)">
+            <summary>
+            Update existing post schedule
+            </summary>
+            <param name="postId">Post id xxx_zzz</param>
+            <param name="model"><see cref="T:Facebook.NET.SDK.Domain.Page.PagePostScheduleUpdateModel"/></param>
+            <returns>Facebook response Success</returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.Me.PageNode.UploadPhoto(Facebook.NET.SDK.Domain.Photo.PhotoModel)">
+            <summary>
+            Upload photo to page gallery
+            if no page access token -> upload to users gallery
+            </summary>
+            <param name="model">New photo model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Node.Me.PageNode.AddPageAccessToken(System.Collections.Generic.IEnumerable{Facebook.NET.SDK.Infrastructure.Request.IQueryParam})">
+            <summary>
+            Sets Pages access token as user access token
+            </summary>
+            <param name="params"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Facebook.NET.SDK.Tools.Converter.StringDateConverter">
+            <summary>
+            Allow convert DateTime to Facebook Date (YYYY-MM-DD) format
+            </summary>
+        </member>
+        <member name="M:Facebook.NET.SDK.Tools.Navigator.ToRelative(System.String)">
+            <summary>
+            Returns absolut path to endpoint (for batch)
+            </summary>
+            <param name="input"></param>
+            <returns>Relative url string</returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Tools.Navigator.ToRelative(System.Func{Facebook.NET.SDK.Tools.Navigator,System.String})">
+            <summary>
+            Returns absolut path to endpoint (for batch)
+            </summary>
+            <param name="func"></param>
+            <returns>Relative url string</returns>
+        </member>
+        <member name="M:Facebook.NET.SDK.Tools.Navigator.PageFeed(System.String)">
+            <summary>
+            Page feed
+            </summary>
+            <param name="pageId">Target page id</param>
+            <returns>Page feed url</returns>
+        </member>
+    </members>
+</doc>

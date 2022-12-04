@@ -1,0 +1,26 @@
+C:\Users\zedho\source\repos\AUTOBLAST M\AUTOBLAST M\bin\Debug\AUTOBLAST M.exe.config
+C:\Users\zedho\source\repos\AUTOBLAST M\AUTOBLAST M\bin\Debug\AUTOBLAST M.exe
+C:\Users\zedho\source\repos\AUTOBLAST M\AUTOBLAST M\bin\Debug\AUTOBLAST M.pdb
+C:\Users\zedho\source\repos\AUTOBLAST M\AUTOBLAST M\obj\Debug\AUTOBLAST M.csproj.AssemblyReference.cache
+C:\Users\zedho\source\repos\AUTOBLAST M\AUTOBLAST M\obj\Debug\AUTOBLAST M.csproj.SuggestedBindingRedirects.cache
+C:\Users\zedho\source\repos\AUTOBLAST M\AUTOBLAST M\obj\Debug\AUTOBLAST_M.Form1.resources
+C:\Users\zedho\source\repos\AUTOBLAST M\AUTOBLAST M\obj\Debug\AUTOBLAST_M.Properties.Resources.resources
+C:\Users\zedho\source\repos\AUTOBLAST M\AUTOBLAST M\obj\Debug\AUTOBLAST M.csproj.GenerateResource.cache
+C:\Users\zedho\source\repos\AUTOBLAST M\AUTOBLAST M\obj\Debug\AUTOBLAST M.csproj.CoreCompileInputs.cache
+C:\Users\zedho\source\repos\AUTOBLAST M\AUTOBLAST M\obj\Debug\AUTOBLAST M.exe
+C:\Users\zedho\source\repos\AUTOBLAST M\AUTOBLAST M\obj\Debug\AUTOBLAST M.pdb
+C:\Users\zedho\source\repos\AUTOBLAST M\AUTOBLAST M\obj\Debug\AUTOBLAST_M.Form2.resources
+C:\Users\zedho\source\repos\AutoBlast M\AUTOBLAST M\obj\Debug\AUTOBLAST_M.Dashboard.resources
+C:\Users\zedho\source\repos\AutoBlast M\AUTOBLAST M\obj\Debug\AUTOBLAST_M.Form3.resources
+C:\Users\zedho\source\repos\AutoBlast M\AUTOBLAST M\bin\Debug\Facebook.Messenger.dll
+C:\Users\zedho\source\repos\AutoBlast M\AUTOBLAST M\bin\Debug\Facebook.NET.SDK.dll
+C:\Users\zedho\source\repos\AutoBlast M\AUTOBLAST M\bin\Debug\FacebookCore.dll
+C:\Users\zedho\source\repos\AutoBlast M\AUTOBLAST M\bin\Debug\FacebookEasyAccess.dll
+C:\Users\zedho\source\repos\AutoBlast M\AUTOBLAST M\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zedho\source\repos\AutoBlast M\AUTOBLAST M\bin\Debug\Rest.Net.dll
+C:\Users\zedho\source\repos\AutoBlast M\AUTOBLAST M\bin\Debug\Facebook.dll
+C:\Users\zedho\source\repos\AutoBlast M\AUTOBLAST M\bin\Debug\Facebook.Messenger.xml
+C:\Users\zedho\source\repos\AutoBlast M\AUTOBLAST M\bin\Debug\Facebook.NET.SDK.xml
+C:\Users\zedho\source\repos\AutoBlast M\AUTOBLAST M\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zedho\source\repos\AutoBlast M\AUTOBLAST M\bin\Debug\Rest.Net.xml
+C:\Users\zedho\source\repos\AutoBlast M\AUTOBLAST M\obj\Debug\AUTOBLAST M.csproj.CopyComplete

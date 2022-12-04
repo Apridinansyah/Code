@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rest.Net</name>
+    </assembly>
+    <members>
+        <member name="T:Rest.Net.Interfaces.IAuthentication">
+            <summary>
+            Authentication interface for creating authnticators
+            </summary>
+        </member>
+        <member name="M:Rest.Net.Interfaces.IAuthentication.SetRequestAuthentication(Rest.Net.Interfaces.IRestRequest)">
+            <summary>
+            A method for setting up the authentication for the request
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="P:Rest.Net.Interfaces.IRestClient.BaseUrl">
+            <summary>
+            Gets the base URL.
+            </summary>
+            <value>
+            The base URL.
+            </value>
+        </member>
+        <member name="P:Rest.Net.Interfaces.IRestClient.Authentication">
+            <summary>
+            Get or Set an authenticator to easyly implement authntication with an API
+            </summary>
+            <value>
+            The authenticator instance
+            </value>
+        </member>
+        <member name="M:Rest.Net.Interfaces.IRestClient.SetBaseUrl(System.String)">
+            <summary>
+            Sets the base URL.
+            </summary>
+            <param name="url">The URL.</param>
+        </member>
+        <member name="M:Rest.Net.Interfaces.IRestClient.AddParameter(System.String,System.String)">
+            <summary>
+            Adds a global querystring parameter. If a parameter with the same name exists in the request it will override the global one.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Rest.Net.Interfaces.IRestClient.AddHeader(System.String,System.String)">
+            <summary>
+            Adds a global header. If a header with the same name exists in the request it will override the global one.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Rest.Net.Interfaces.IRestClient.UseStats">
+            <summary>
+            Keep and return statistics on requests.
+            </summary>
+        </member>
+        <member name="M:Rest.Net.Interfaces.IRestClient.ExecuteAsync(Rest.Net.Interfaces.IRestRequest)">
+            <summary>
+            Executes a specified request asynchronously.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rest.Net.Interfaces.IRestClient.ExecuteAsync``1(Rest.Net.Interfaces.IRestRequest)">
+            <summary>
+            Executes a specified request asynchronously.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rest.Net.Interfaces.IRestClient.ExecuteAsync``1(Rest.Net.Interfaces.IRestRequest,``0)">
+            <summary>
+            Executes a specified request asynchronously.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="request">The request.</param>
+            <param name="anonymousTypeObject">Anonymous object to return type.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Rest.Net.RestClient">
+            <summary>
+            Rest client for making http calls to a specific server
+            </summary>
+        </member>
+    </members>
+</doc>
